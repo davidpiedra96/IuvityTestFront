@@ -1,0 +1,98 @@
+<div class="principal">
+  <div><app-header></app-header></div>
+  <div class="content-producto" *ngIf="producto">
+    <h3>Producto: {{producto.nombre}}</h3>
+    <!-- DATOS INICIALES -->
+    <div class="tabla-datos-iniciales">
+      <table style="border: hidden">
+        <tr>
+          <th>Código:</th>
+          <td>{{producto.codigo}}</td>
+          <td></td>
+
+          <th>Nombre:</th>
+          <td>{{producto.nombre}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Referencia:</th>
+          <td>{{producto.referencia}}</td>
+          <td></td>
+
+          <th>Cantidad Actual:</th>
+          <td>{{producto.saldo_cant}}</td>
+        </tr>
+        <tr>
+          <th colspan="2">Valor Unitario:</th>
+          <td>${{producto.vlr_unitario}}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- BOTONES KARDEX -->
+    <div class="btn-group" role="group" aria-label="Basic outlined example">
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregar-compra" >Agregar compra</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregar-venta">Agregar Venta</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregar-devolucion-compra">Devolución Compra</button>
+      <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#agregar-devolucion-venta">Devolución Venta</button>
+    </div>
+
+    <!-- PAGINADOR KARDEX -->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><button class="page-link" type="button" (click)="cargarKardexMesAnterior()" >Mes Anterior</button></li>
+        <li class="page-item"><button class="page-link" type="button" (click)="cargarKardexMesSiguiente()" >Mes Siguiente</button></li>
+      </ul>
+    </nav>
+
+    <!-- KARDEX -->
+    <div class="table-kardex">
+      <h3 class="mes">{{obtenerMes()}} - {{anio}}</h3>
+      <table class="table table-striped">
+        <thead class="table-dark">
+          <tr>
+            <th>Indice</th>
+            <th>Código Producto</th>
+            <th>Fecha</th>
+            <th>Descripción</th>
+            <th>Valor Unitario</th>
+            <th>Entrada Cant</th>
+            <th>Entrada Valor</th>
+            <th>Salida Cant</th>
+            <th>Salida Valor</th>
+            <th>Saldo Cant</th>
+            <th>Saldo Valor</th>
+            <th>Fact Venta</th>
+            <th>Fact Compra</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listaKardex">
+            <td>{{item.indice}}</td>
+            <td>{{item.codigo_producto}}</td>
+            <td>{{item.fecha}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>${{item.vlr_unitario}}</td>
+            <td>{{item.entrada_cant}}</td>
+            <td>${{item.entrada_valor}}</td>
+            <td>{{item.salida_cant}}</td>
+            <td>${{item.salida_valor}}</td>
+            <td>{{item.saldo_cant}}</td>
+            <td>${{item.saldo_valor}}</td>
+            <td>{{item.codigo_factura_venta}}</td>
+            <td>{{item.codigo_factura_compra}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div><app-footer></app-footer></div>
+</div>
+
+
+
+<!-- Modal -->
+<app-modal-agregar-compra></app-modal-agregar-compra>
+<app-modal-agregar-devolucion-compra></app-modal-agregar-devolucion-compra>
+<app-modal-agregar-devolucion-venta></app-modal-agregar-devolucion-venta>
+<app-modal-agregar-venta></app-modal-agregar-venta>

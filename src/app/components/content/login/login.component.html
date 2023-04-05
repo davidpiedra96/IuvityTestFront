@@ -1,0 +1,39 @@
+<div class="fondo">
+  <main>
+    <div class="card border-light mb-3" style="width: 25rem">
+      <div class="card-body">
+        <h1 class="logotipo">Kardex</h1>
+        <h5 class="mb-3 fw-normal">Iniciar Sesión</h5>
+        <div class="form">
+          <div class="form-floating">
+            <input
+              type="text"
+              class="form-control"
+              id="floatingInput"
+              placeholder="Usuario"
+              name="usuario"
+              autocomplete="off"
+              [(ngModel)]="usuario"
+            />
+            <label for="floatingInput" >Usuario</label>
+          </div>
+          <div class="form-floating">
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="floatingPassword"
+              placeholder="Password"
+              [(ngModel)]="password"
+              (keyup.enter)="login()"
+            />
+            <label for="floatingPassword">Password</label>
+          </div>
+          <button class="btn-login w-100 btn btn-lg btn-primary" (click)="login()" type="button" name="btnLogin">
+            Ingresar
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

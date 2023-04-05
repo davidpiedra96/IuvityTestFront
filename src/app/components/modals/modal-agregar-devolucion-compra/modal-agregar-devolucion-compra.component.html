@@ -1,0 +1,55 @@
+<div class="modal fade" id="agregar-devolucion-compra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Devolución de factura de Copra</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formDevCompra" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="fechaDevCompra" class="form-label">Fecha de la devolución de la compra</label>
+            <input type="date" class="form-control" id="fechaDevCompra" name="fechaDevCompra" formControlName="fechaDevCompra" required>
+            <div *ngIf="formDevCompra.get('fechaDevCompra')?.touched && formDevCompra.get('fechaDevCompra')?.errors" class="error">
+              Por favor ingrese la fecha de la devolución de la compra.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" formControlName="descripcion" required>
+            <div *ngIf="formDevCompra.get('descripcion')?.touched && formDevCompra.get('descripcion')?.errors" class="error">
+              Por favor ingrese la descripción de la compra.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="entrada_cant" class="form-label">Cantidad de Unidades devueltas</label>
+            <input type="text" class="form-control" id="entrada_cant" name="entrada_cant" formControlName="entrada_cant" required>
+            <div *ngIf="formDevCompra.get('entrada_cant')?.touched && formDevCompra.get('entrada_cant')?.errors" class="error">
+              Por favor ingrese un valor valido en las unidades devueltas.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="entrada_valor" class="form-label">Valor de la compra</label>
+            <input type="text" class="form-control" id="entrada_valor" name="entrada_valor" formControlName="entrada_valor" required>
+            <div *ngIf="formDevCompra.get('entrada_valor')?.touched && formDevCompra.get('entrada_valor')?.errors" class="error">
+              Por favor ingrese un valor valido en el valor de compra.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="codigo_factura_comprada" class="form-label">Número de la factura</label>
+            <input type="text" class="form-control" id="codigo_factura_comprada" name="codigo_factura_comprada" formControlName="codigo_factura_comprada" required>
+            <div *ngIf="formDevCompra.get('codigo_factura_comprada')?.touched && formDevCompra.get('codigo_factura_comprada')?.errors" class="error">
+              Por favor ingrese el número de la factura de compra.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

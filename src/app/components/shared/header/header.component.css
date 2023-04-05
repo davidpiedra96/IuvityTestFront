@@ -1,0 +1,10 @@
+.logotipo{
+  font-family: RussoOne;
+  text-align: center;
+  font-size: 2em;
+}
+
+@font-face {
+  font-family: RussoOne;
+  src: url(../../../../assets/fonts/RussoOne-Regular.ttf);
+}

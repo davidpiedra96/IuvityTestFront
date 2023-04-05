@@ -1,0 +1,14 @@
+.content-tabla {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.table {
+  width: 75%;
+}
+
+ul {
+  list-style: none;
+}
+

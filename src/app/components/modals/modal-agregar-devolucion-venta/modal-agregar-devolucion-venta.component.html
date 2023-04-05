@@ -1,0 +1,48 @@
+<div class="modal fade" id="agregar-devolucion-venta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formDevVenta" (ngSubmit)="onSubmit()">
+          <div class="mb-3">
+            <label for="fechaDevVenta" class="form-label">Fecha de la devolución de la venta</label>
+            <input type="date" class="form-control" id="fechaDevVenta" name="fechaDevVenta" formControlName="fechaDevVenta" required>
+            <div *ngIf="formDevVenta.get('fechaDevVenta')?.touched && formDevVenta.get('fechaDevVenta')?.errors" class="error">
+              Por favor ingrese la fecha de la devolución de la compra.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" formControlName="descripcion" required>
+            <div *ngIf="formDevVenta.get('descripcion')?.touched && formDevVenta.get('descripcion')?.errors" class="error">
+              Por favor ingrese la descripción de la compra.
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="salida_cant" class="form-label">Cantidad de Unidades devueltas</label>
+            <input type="text" class="form-control" id="salida_cant" name="salida_cant" formControlName="salida_cant" required>
+            <div *ngIf="formDevVenta.get('salida_cant')?.touched && formDevVenta.get('salida_cant')?.errors" class="error">
+              Por favor ingrese un valor valido en las unidades devueltas.
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="codigo_factura_venta" class="form-label">Número de la factura</label>
+            <input type="text" class="form-control" id="codigo_factura_venta" name="codigo_factura_venta" formControlName="codigo_factura_venta" required>
+            <div *ngIf="formDevVenta.get('codigo_factura_venta')?.touched && formDevVenta.get('codigo_factura_venta')?.errors" class="error">
+              Por favor ingrese el número de la factura de venta.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="submit" class="btn btn-primary">Aceptar</button>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

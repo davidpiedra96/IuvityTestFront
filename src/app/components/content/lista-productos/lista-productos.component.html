@@ -1,0 +1,26 @@
+<div class="content-tabla">
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Referencia</th>
+        <th scope="col">Unidad</th>
+        <th scope="col">Cantidad Actual</th>
+        <th scope="col">Valor unitario</th>
+        <th scope="col">Opción</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr *ngFor="let producto of lProducto; let i = index">
+        <th scope="row">{{producto.codigo}}</th>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.referencia}}</td>
+        <td>{{producto.unidad}}</td>
+        <td>{{producto.saldo_cant}}</td>
+        <td>${{producto.vlr_unitario}}</td>
+        <td><button type="button" class="btn btn-dark" (click)='verKardex(producto.codigo)'>Ver Kardex</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

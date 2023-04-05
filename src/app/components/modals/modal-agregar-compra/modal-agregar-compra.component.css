@@ -1,0 +1,9 @@
+.error {
+  border: 1px solid #f5c2c7!important;
+  border-radius: .375rem;
+  padding: .375rem .75rem;
+  margin-top: 2%;
+  background-color: #f5c2c7;
+  background: #f8d7da;
+  color: #842029;
+}

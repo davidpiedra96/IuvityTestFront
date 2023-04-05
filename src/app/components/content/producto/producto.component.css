@@ -1,0 +1,50 @@
+.principal{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.table{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.content-producto{
+  margin-top: 10em;
+  margin-bottom: 5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabla-datos-iniciales{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.table-kardex{
+  width: 80%;
+}
+
+.page-link{
+  color:black;
+}
+
+.btn-group{
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.mes {
+  padding-bottom: 2%;
+  text-align: center;
+}
+
+button{
+  color:black;
+}
